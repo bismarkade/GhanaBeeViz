@@ -1,1 +1,1 @@
-# GhanaBeeViz
+# Bee Visualization 
