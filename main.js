@@ -30,7 +30,7 @@ var OpenStreetMap_Mapnik = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{
 
 // Function for the colours and classifying it accoring to cases.. Hex from Color brewer
 
- function getColor(d) {
+ /* function getColor(d) {
     return d > 50000 ? '#800026' :
            d > 30000  ? '#BD0026' :
            d > 20000  ? '#E31A1C' :
@@ -39,7 +39,7 @@ var OpenStreetMap_Mapnik = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{
            d > 2000   ? '#FEB24C' :
            d > 1000   ? '#FED976' :
                       '#FFEDA0';
-}
+} */
 
   function style(feature) {
       return {
