@@ -3,3 +3,5 @@
 Intro space
 ## How to use the Map
 How to section
+test link: https://bismarkade.github.io/GhanaBeeViz/
+
