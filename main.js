@@ -110,7 +110,7 @@ markers.addLayer(geoJsonLayer);
 	};
 
 	var overlays = {
-		 "Bee Location": markers,
+		 "Bees": markers,
         
 	};
 
