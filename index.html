@@ -11,20 +11,54 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
 
+    <!--link to plugins-->
     <link rel="stylesheet" href="dist/MarkerCluster.css">
     <link rel="stylesheet" href="dist/MarkerCluster.Default.css">
     <script src="dist/leaflet.markercluster-src.js"></script>
+	
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+        crossorigin=""/>
 
-
+    <link rel="stylesheet" href="./dist/leaflet-sidebar.css">
+    
 </head>
 
 <body>
+     <!-- optionally define the sidebar content via HTML markup -->
+    <div id="sidebar" class="leaflet-sidebar collapsed">
+
+        <!-- nav tabs -->
+        <div class="leaflet-sidebar-tabs">
+            <!-- top aligned tabs -->
+            <ul role="tablist">
+                <li><a href="#home" role="tab"><i class="fa fa-bars active"></i></a></li>
+            </ul>
+           
+        </div>
+
+        <!-- panel content -->
+        <div class="leaflet-sidebar-content">
+            <div class="leaflet-sidebar-pane" id="home">
+                <h1 class="leaflet-sidebar-header">
+                    BEE MAP GHANA
+                    <span class="leaflet-sidebar-close"><i class="fa fa-caret-left"></i></span>
+                </h1>
+
+                <p> The Map shows the dristribution of Bees accross Ghana </p>
+                
+                <p><b>To be updated soon!!.</b></p>
+
+            </div>
+
+        </div>
+    </div>
 	<div id='L-map' class='map'>
 		
 		
 	</div>
     <div class="info"></div>
-   
+    <script src="./dist/leaflet-sidebar.js"></script>
     <script src="./main.js"></script>
     <script src="Data/Gh_Covid_region.js"></script>
     <script src="Data/ClusterData.js"></script>
