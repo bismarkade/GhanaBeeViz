@@ -18,7 +18,16 @@ var OpenTopoMap = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png'
 	attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
 });
 
-
+var Stamen_TerrainBackground = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/terrain-background/{z}/{x}/{y}{r}.{ext}', {
+	attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+	subdomains: 'abcd',
+	minZoom: 0,
+	maxZoom: 19,
+	ext: 'png'
+});
+var Esri_WorldImagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+    attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+  });
 /**
  * Marker cluster
  */
@@ -119,8 +128,8 @@ markerCluster.addLayer(bees);
 // Map layer
 var map = L.map('L-map', {
     center: [ 8.964844, -1.373291],
-	zoom: 7, //use 7 for production
-    minZoom: 6, 
+	zoom: 9, //use 7 for production
+    minZoom: 7, 
     //layers: [ CartoDB_DarkMatter, CumCases, markers]
     layers: [ OpenStreetMap_Mapnik, markerCluster]
 })
@@ -132,8 +141,8 @@ var map = L.map('L-map', {
 
 var baseLayers = {
     "Open Street Map": OpenStreetMap_Mapnik,
-    "Esri_WorldGrayCanvas": Esri_WorldGrayCanvas,
-    "OpenTopoMap": OpenTopoMap
+    "Esri_Imagery": Esri_WorldImagery,
+    "Terrain": Stamen_TerrainBackground
 };
 
 var overlays = {
@@ -145,6 +154,5 @@ L.control.layers(baseLayers, overlays).addTo(map);
 
  // create the sidebar instance and add it to the map
  var sidebar = L.control.sidebar({ container: 'sidebar' }).addTo(map).open('home');
-
 
 }
