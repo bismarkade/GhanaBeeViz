@@ -75,6 +75,14 @@ var beeIcon = L.icon({
     iconSize: [32, 37],
 });
 
+// Using fetch to get the data
+var beeHeat = L.geoJson(BeeData, {
+    pointToLayer: function(feature, layer){
+
+    }
+});
+console.log(beeHeat.feature)
+
 var bees = L.geoJson(BeeData, {
     pointToLayer: function(feature, layer){
         var marker = L.marker(layer, {icon: beeIcon});
@@ -114,11 +122,15 @@ var bees = L.geoJson(BeeData, {
             "</td></tr>";
         marker.bindPopup(popupcontent);
     return marker;
+    
     }
 });
 
+
 //markerCluster.addLayer(geoJsonLayer);
 markerCluster.addLayer(bees);
+
+
 
 // Map layer
 var map = L.map('L-map', {
