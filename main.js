@@ -138,7 +138,7 @@ var map = L.map('L-map', {
 	zoom: 9, //use 7 for production
     minZoom: 7, 
     //layers: [ CartoDB_DarkMatter, CumCases, markers]
-    layers: [ OpenStreetMap_Mapnik, markerCluster]
+    layers: [ OpenStreetMap_Mapnik, markerCluster, OpenTopoMap]
 })
 
 
@@ -149,7 +149,8 @@ var map = L.map('L-map', {
 var baseLayers = {
     "Open Street Map": OpenStreetMap_Mapnik,
     "Esri_Imagery": Esri_WorldImagery,
-    "Terrain": Stamen_TerrainBackground
+    "Terrain": Stamen_TerrainBackground,
+    "OpenTopo": OpenTopoMap
 };
 
 var overlays = {
