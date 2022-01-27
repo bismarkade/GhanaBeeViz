@@ -163,4 +163,7 @@ L.control.layers(baseLayers, overlays).addTo(map);
  // create the sidebar instance and add it to the map
  var sidebar = L.control.sidebar({ container: 'sidebar' }).addTo(map).open('home');
 
+// leaflet search
+L.Control.geocoder().addTo(map);
+
 }
